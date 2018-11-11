@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://orange.png" type="Texture" id=1]
+[ext_resource path="res://dark_grey.png" type="Texture" id=2]
+[ext_resource path="res://grey.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=3]
+
+render_priority = 0
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="tileset" type="Node2D"]
+
+[node name="ground" type="Sprite" parent="." index="0"]
+
+material = SubResource( 3 )
+position = Vector2( 7.99999, 8 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Material" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground" index="0"]
+
+position = Vector2( -7.99999, -8 )
+scale = Vector2( 16, 16 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/StaticBody2D" index="0"]
+
+position = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.0384615, 0.0384615 )
+shape = SubResource( 4 )
+
+[node name="darkgrey" type="Sprite" parent="." index="1"]
+
+position = Vector2( 40, 8 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="darkgrey" index="0"]
+
+position = Vector2( -8, 8 )
+scale = Vector2( 1.125, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="darkgrey/StaticBody2D2" index="0"]
+
+position = Vector2( 7.11111, -8 )
+scale = Vector2( 0.547009, 0.615385 )
+shape = SubResource( 5 )
+
+[node name="grey" type="Sprite" parent="." index="2"]
+
+position = Vector2( 72, 8 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 3 )
+
+
