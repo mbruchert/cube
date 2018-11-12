@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://particles_teleporting.tres" type="Material" id=1]
+[ext_resource path="res://level1/particles_end.gd" type="Script" id=2]
+
+[node name="leel_end_one_shot" type="Particles2D"]
+
+position = Vector2( 3821.47, 470.096 )
+emitting = false
+amount = 20
+lifetime = 3.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 3.0
+explosiveness = 0.1
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = ExtResource( 1 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+script = ExtResource( 2 )
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
+
+

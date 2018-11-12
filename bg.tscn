@@ -1,0 +1,43 @@
+[gd_scene format=2]
+
+[node name="bg" type="Node2D"]
+
+scale = Vector2( 1, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -404.0
+margin_top = -382.0
+margin_right = 5792.0
+margin_bottom = 850.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.221161, 0.221161, 0.221161, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -400.0
+margin_top = 272.0
+margin_right = 5792.0
+margin_bottom = 864.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.193857, 0.193857, 0.193857, 1 )
+
+

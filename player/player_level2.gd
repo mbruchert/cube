@@ -8,7 +8,7 @@ const JUMP_SPEED = 480
 const SIDING_CHANGE_SPEED = 10
 
 
-var gravity_vec = Vector2(0, 900)
+var gravity_vec = Vector2(0, 0)
 var linear_vel = Vector2()
 var onair_time = 0 
 var on_floor = false
@@ -49,6 +49,14 @@ func _physics_process(delta):
 
 	target_speed *= WALK_SPEED
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
+	var target_speed_v = 0
+	if Input.is_action_pressed("jump"):
+		target_speed_v += -1
+	if Input.is_action_pressed("down"):
+		target_speed_v +=  1
+
+	target_speed_v *= WALK_SPEED
+	linear_vel.y = lerp(linear_vel.y, target_speed_v, 0.1)
 
 	# Jumping
 	if on_floor and Input.is_action_just_pressed("jump"):
@@ -70,15 +78,15 @@ func _physics_process(delta):
 		$anim.play(anim)
 	
 
-func _on_Area2D_area_entered(gravity_top):
-	gravity_vec = Vector2(0, -900)
-
-func _on_Area2D_area_exited(area):
-	gravity_vec = Vector2(0, 900)
-
-#func _on_Area2D2_area_entered(no_gravity):
-#	gravity_vec = Vector2(0, 0)
-#
-
 	
+
+
+#func _on_Area2D_area_exited(area):
+#	gravity_vec = Vector2(0, 900)
+#
+##func _on_Area2D2_area_entered(no_gravity):
+##	gravity_vec = Vector2(0, 0)
+##
+#
+#
 	

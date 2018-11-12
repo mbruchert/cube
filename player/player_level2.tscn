@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://player/player.gd" type="Script" id=1]
-[ext_resource path="res://textures/jetpack.png" type="Texture" id=2]
-[ext_resource path="res://player/player_gravity_colision.tres" type="Shape2D" id=3]
+[ext_resource path="res://player/player_level2.gd" type="Script" id=1]
+[ext_resource path="res://player/player_gravity_colision.tres" type="Shape2D" id=2]
 
 [sub_resource type="Curve" id=1]
 
@@ -70,60 +69,6 @@ anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Animation", "Color", "Damping", "Emission Shape", "Gravity", "Hue Variation", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
-
-[sub_resource type="Curve" id=9]
-
-min_value = -1.0
-max_value = 1.0
-bake_resolution = 100
-_data = [ Vector2( 0.023302, -0.882876 ), 0.0, 0.0, 0, 0, Vector2( 1, -0.646885 ), 0.386168, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=10]
-
-flags = 4
-width = 2048
-curve = SubResource( 9 )
-
-[sub_resource type="ParticlesMaterial" id=11]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 3
-emission_point_count = 1
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 45.0
-flatness = 0.0
-gravity = Vector3( 0, 40, 0 )
-initial_velocity = 1.0
-initial_velocity_random = 0.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 3.0
-scale_random = 0.0
-color = Color( 0.509935, 1, 0, 1 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-hue_variation_curve = SubResource( 10 )
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Color", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Scale" ]
 
 [sub_resource type="CircleShape2D" id=6]
 
@@ -245,42 +190,12 @@ size_flags_vertical = 1
 color = Color( 0.180392, 1, 0, 1 )
 _sections_unfolded = [ "Rect" ]
 
-[node name="Sprite" type="Sprite" parent="sprite/ColorRect" index="0"]
-
-visible = false
-position = Vector2( -24, 16 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 2 )
-
-[node name="Particles2D" type="Particles2D" parent="sprite/ColorRect/Sprite" index="0"]
-
-position = Vector2( 12.0438, 12.601 )
-emitting = true
-amount = 8
-lifetime = 1.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 11 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material" ]
-
 [node name="camera" type="Camera2D" parent="." index="2"]
 
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 0.7, 0.7 )
+zoom = Vector2( 1, 1 )
 limit_left = 0
 limit_top = 0
 limit_right = 10000000
@@ -330,11 +245,11 @@ audio_bus_name = "Master"
 
 position = Vector2( -0.0415783, -1.83073 )
 scale = Vector2( 1.23077, 0.180924 )
-shape = ExtResource( 3 )
+shape = ExtResource( 2 )
 
 [node name="Area2D2" type="Area2D" parent="." index="6"]
 
-position = Vector2( 0.274452, -2.67843 )
+position = Vector2( 0, -1.758 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -347,7 +262,7 @@ audio_bus_name = "Master"
 
 position = Vector2( -0.0415783, -1.83073 )
 scale = Vector2( 1.23077, 0.180924 )
-shape = ExtResource( 3 )
+shape = ExtResource( 2 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 

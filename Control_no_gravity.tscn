@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://interface/jump.png" type="Texture" id=1]
+[ext_resource path="res://interface/left.png" type="Texture" id=2]
+[ext_resource path="res://interface/right.png" type="Texture" id=3]
+
+[node name="Control" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="jump" type="TouchScreenButton" parent="." index="0"]
+
+position = Vector2( 912, 400 )
+scale = Vector2( 6, 6 )
+normal = ExtResource( 1 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "jump"
+visibility_mode = 0
+
+[node name="jump2" type="TouchScreenButton" parent="." index="1"]
+
+position = Vector2( 1007.23, 596.93 )
+rotation = 3.14159
+scale = Vector2( 6, 6 )
+normal = ExtResource( 1 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "down"
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Node2D" type="Node2D" parent="." index="2"]
+
+position = Vector2( 144, 496 )
+scale = Vector2( 6, 6 )
+
+[node name="MarginContainer" type="MarginContainer" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Margin" ]
+
+[node name="left" type="TouchScreenButton" parent="MarginContainer" index="0"]
+
+position = Vector2( 16.0002, 496 )
+scale = Vector2( 6, 6 )
+normal = ExtResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "move_left"
+visibility_mode = 0
+
+[node name="right" type="TouchScreenButton" parent="MarginContainer" index="1"]
+
+position = Vector2( 144, 496 )
+scale = Vector2( 6, 6 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "move_right"
+visibility_mode = 0
+
+

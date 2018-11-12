@@ -1,0 +1,14 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+
+font_path = "res://font/04b_19/04B_19__.TTF"
+
+[resource]
+
+size = 84
+use_mipmaps = true
+use_filter = false
+font_data = SubResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
+

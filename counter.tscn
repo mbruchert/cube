@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://interface/coin_counter.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=9]
+
+hinting = 2
+font_path = "res://font/04b_19/04B_19__.TTF"
+
+[sub_resource type="DynamicFont" id=10]
+
+size = 84
+use_mipmaps = true
+use_filter = false
+font_data = SubResource( 9 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Label" type="Label"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 245.0
+margin_bottom = 417.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 1 )
+_sections_unfolded = [ "custom_fonts", "custom_styles" ]
+
+
