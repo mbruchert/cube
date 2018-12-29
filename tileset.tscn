@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://orange.png" type="Texture" id=1]
 [ext_resource path="res://dark_grey.png" type="Texture" id=2]
 [ext_resource path="res://grey.png" type="Texture" id=3]
 [ext_resource path="res://textures/blue.png" type="Texture" id=4]
 [ext_resource path="res://textures/red.png" type="Texture" id=5]
+[ext_resource path="res://textures/jump_pad.png" type="Texture" id=6]
 
 [sub_resource type="ShaderMaterial" id=1]
 
@@ -52,10 +53,10 @@ shape = SubResource( 2 )
 position = Vector2( 40, 8 )
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="darkgrey" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="darkgrey" index="0"]
 
-position = Vector2( -8, 8 )
-scale = Vector2( 1.125, 1 )
+position = Vector2( 0, -1.90735e-06 )
+scale = Vector2( 0.75, 0.75 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -64,10 +65,10 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="darkgrey/StaticBody2D2" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="darkgrey/StaticBody2D" index="0"]
 
-position = Vector2( 7.11111, -8 )
-scale = Vector2( 0.547009, 0.615385 )
+position = Vector2( -8.34465e-07, 2.86102e-06 )
+scale = Vector2( 0.820513, 0.820513 )
 shape = SubResource( 3 )
 
 [node name="grey" type="Sprite" parent="." index="2"]
@@ -85,9 +86,10 @@ texture = ExtResource( 4 )
 position = Vector2( 40, 40 )
 texture = ExtResource( 5 )
 
-[node name="dead_wall" type="Sprite" parent="." index="5"]
+[node name="jump_pad" type="Sprite" parent="." index="5"]
 
 position = Vector2( 72, 40 )
-texture = ExtResource( 5 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 6 )
 
 

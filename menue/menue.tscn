@@ -1,0 +1,175 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://bg.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://menue/death.gd" type="Script" id=4]
+[ext_resource path="res://Control.tscn" type="PackedScene" id=5]
+[ext_resource path="res://menue/menue.gd" type="Script" id=6]
+[ext_resource path="res://font/counter_font.tres" type="DynamicFont" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="root" type="Node2D" index="0"]
+
+[node name="bg" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 9.03741, -117.405 )
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262165, 0, 0, 262166, 0, 0, 262171, 0, 0, 262172, 0, 0, 262175, 0, 0, 262176, 0, 0, 262177, 0, 0, 262178, 0, 0, 262179, 0, 0, 262180, 0, 0, 262185, 0, 0, 262186, 0, 0, 262187, 0, 0, 262188, 0, 0, 262189, 0, 0, 262190, 0, 0, 327693, 0, 0, 327694, 1, 0, 327695, 1, 0, 327696, 1, 0, 327697, 1, 0, 327698, 1, 0, 327701, 1, 0, 327702, 1, 0, 327707, 1, 0, 327708, 1, 0, 327711, 1, 0, 327712, 1, 0, 327713, 1, 0, 327714, 1, 0, 327715, 1, 0, 327716, 1, 0, 327717, 0, 0, 327721, 1, 0, 327722, 1, 0, 327723, 1, 0, 327724, 1, 0, 327725, 1, 0, 327726, 1, 0, 393229, 1, 0, 393230, 2, 0, 393231, 2, 0, 393232, 2, 0, 393233, 2, 0, 393234, 2, 0, 393237, 2, 0, 393238, 2, 0, 393243, 2, 0, 393244, 2, 0, 393247, 2, 0, 393248, 2, 0, 393249, 2, 0, 393250, 2, 0, 393251, 2, 0, 393252, 2, 0, 393253, 1, 0, 393254, 0, 0, 393257, 2, 0, 393258, 2, 0, 393259, 2, 0, 393260, 2, 0, 393261, 2, 0, 393262, 2, 0, 458765, 2, 0, 458766, 2, 0, 458773, 2, 0, 458774, 2, 0, 458779, 2, 0, 458780, 2, 0, 458783, 2, 0, 458784, 2, 0, 458789, 2, 0, 458790, 1, 0, 458793, 2, 0, 458794, 2, 0, 524301, 2, 0, 524302, 2, 0, 524309, 2, 0, 524310, 2, 0, 524315, 2, 0, 524316, 2, 0, 524319, 2, 0, 524320, 2, 0, 524325, 2, 0, 524326, 2, 0, 524329, 2, 0, 524330, 2, 0, 589837, 2, 0, 589838, 2, 0, 589845, 2, 0, 589846, 2, 0, 589851, 2, 0, 589852, 2, 0, 589855, 2, 0, 589856, 2, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 589860, 0, 0, 589861, 2, 0, 589865, 2, 0, 589866, 2, 0, 589867, 0, 0, 589868, 0, 0, 589869, 0, 0, 589870, 0, 0, 655373, 2, 0, 655374, 2, 0, 655381, 2, 0, 655382, 2, 0, 655387, 2, 0, 655388, 2, 0, 655391, 2, 0, 655392, 2, 0, 655393, 1, 0, 655394, 1, 0, 655395, 1, 0, 655396, 1, 0, 655397, 2, 0, 655398, 0, 0, 655401, 2, 0, 655402, 2, 0, 655403, 1, 0, 655404, 1, 0, 655405, 1, 0, 655406, 1, 0, 720909, 2, 0, 720910, 2, 0, 720917, 2, 0, 720918, 2, 0, 720923, 2, 0, 720924, 2, 0, 720927, 2, 0, 720928, 2, 0, 720929, 2, 0, 720930, 2, 0, 720931, 2, 0, 720932, 2, 0, 720933, 2, 0, 720934, 1, 0, 720937, 2, 0, 720938, 2, 0, 720939, 2, 0, 720940, 2, 0, 720941, 2, 0, 720942, 2, 0, 786445, 2, 0, 786446, 2, 0, 786453, 2, 0, 786454, 2, 0, 786459, 2, 0, 786460, 2, 0, 786463, 2, 0, 786464, 2, 0, 786469, 2, 0, 786470, 2, 0, 786473, 2, 0, 786474, 2, 0, 851981, 2, 0, 851982, 2, 0, 851989, 2, 0, 851990, 2, 0, 851995, 2, 0, 851996, 2, 0, 851999, 2, 0, 852000, 2, 0, 852005, 2, 0, 852006, 2, 0, 852009, 2, 0, 852010, 2, 0, 917517, 2, 0, 917518, 2, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917525, 2, 0, 917526, 2, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 2, 0, 917532, 2, 0, 917535, 2, 0, 917536, 2, 0, 917537, 0, 0, 917538, 0, 0, 917539, 0, 0, 917540, 0, 0, 917541, 2, 0, 917542, 2, 0, 917545, 2, 0, 917546, 2, 0, 917547, 0, 0, 917548, 0, 0, 917549, 0, 0, 917550, 0, 0, 983053, 2, 0, 983054, 2, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983061, 2, 0, 983062, 2, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 2, 0, 983068, 2, 0, 983071, 2, 0, 983072, 2, 0, 983073, 1, 0, 983074, 1, 0, 983075, 1, 0, 983076, 1, 0, 983077, 2, 0, 983081, 2, 0, 983082, 2, 0, 983083, 1, 0, 983084, 1, 0, 983085, 1, 0, 983086, 1, 0, 1048590, 2, 0, 1048591, 2, 0, 1048592, 2, 0, 1048593, 2, 0, 1048594, 2, 0, 1048598, 2, 0, 1048599, 2, 0, 1048600, 2, 0, 1048601, 2, 0, 1048602, 2, 0, 1048603, 2, 0, 1048607, 2, 0, 1048608, 2, 0, 1048609, 2, 0, 1048610, 2, 0, 1048611, 2, 0, 1048612, 2, 0, 1048617, 2, 0, 1048618, 2, 0, 1048619, 2, 0, 1048620, 2, 0, 1048621, 2, 0, 1048622, 2, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="player" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 268.77, 16.352 )
+
+[node name="death" type="Node2D" parent="." index="3"]
+
+script = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="death" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death/Area2D" index="0"]
+
+position = Vector2( 478.477, 417.234 )
+scale = Vector2( 47.7253, 13.0781 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="death/Area2D" index="1"]
+
+position = Vector2( 981.478, 239.212 )
+scale = Vector2( 9.03294, 26.7721 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
+
+position = Vector2( 477.028, 265.95 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.7, 0.7 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Control" parent="CanvasLayer" index="0" instance=ExtResource( 5 )]
+
+[node name="menue" type="Control" parent="CanvasLayer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+
+[node name="start_game" type="Button" parent="CanvasLayer/menue" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 333.0
+margin_top = 458.0
+margin_right = 1074.0
+margin_bottom = 607.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 7 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Start Game"
+flat = true
+clip_text = true
+align = 1
+_sections_unfolded = [ "custom_styles" ]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1220.0
+margin_top = -10.0
+margin_right = 1390.0
+margin_bottom = 150.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.219608, 0.219608, 0.219608, 1 )
+
+[connection signal="body_entered" from="death/Area2D" to="death" method="_on_Area2D_body_entered"]
+
+[connection signal="pressed" from="CanvasLayer/menue/start_game" to="CanvasLayer/menue" method="_on_start_game_pressed"]
+
+

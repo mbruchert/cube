@@ -2,6 +2,7 @@
 
 [sub_resource type="DynamicFontData" id=1]
 
+hinting = 2
 font_path = "res://font/04b_19/04B_19__.TTF"
 
 [resource]

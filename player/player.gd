@@ -52,7 +52,7 @@ func _physics_process(delta):
 
 	# Jumping
 	if on_floor and Input.is_action_just_pressed("jump"):
-		linear_vel.y = -JUMP_SPEED
+		linear_vel.y = - JUMP_SPEED
 		
 
 	
@@ -70,15 +70,16 @@ func _physics_process(delta):
 		$anim.play(anim)
 	
 
-func _on_Area2D_area_entered(gravity_top):
+
+
+func _on_gravity_body_entered(body):
 	gravity_vec = Vector2(0, -900)
 
-func _on_Area2D_area_exited(area):
+
+func _on_gravity_body_exited(body):
 	gravity_vec = Vector2(0, 900)
 
-#func _on_Area2D2_area_entered(no_gravity):
-#	gravity_vec = Vector2(0, 0)
-#
 
-	
-	
+
+func _on_Area2D_body_entered(body):
+	linear_vel.y = -1.7 * JUMP_SPEED

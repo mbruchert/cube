@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="CUBE"
-run/main_scene="res://level1.tscn"
+run/main_scene="res://menue/menue.tscn"
 config/icon="res://icon.png"
 
 [display]

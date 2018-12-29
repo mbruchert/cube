@@ -2,8 +2,6 @@
 
 [node name="bg" type="Node2D"]
 
-scale = Vector2( 1, 1 )
-
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 
 anchor_left = 0.0
@@ -20,7 +18,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.221161, 0.221161, 0.221161, 1 )
+color = Color( 0.219608, 0.219608, 0.219608, 1 )
 
 [node name="ColorRect2" type="ColorRect" parent="." index="1"]
 
